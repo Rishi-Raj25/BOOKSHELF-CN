@@ -487,6 +487,49 @@
       line-height: 0.72;
     }
 
+    .detail-highlights {
+      margin: 22px 0 0;
+      padding: 16px 0 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .detail-highlights h3 {
+      margin: 0 0 11px;
+      color: var(--ink-soft);
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .detail-highlights ul {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .detail-highlights li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 0.84rem;
+      line-height: 1.42;
+      color: var(--ink);
+    }
+
+    .detail-highlights li::before {
+      position: absolute;
+      top: 0.55em;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      content: "";
+    }
+
     .meta-list {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1665,6 +1708,14 @@
       <p class="detail-deck" id="detail-deck">
         The network layer moves packets across interconnected networks using logical addresses, routing, and forwarding.
       </p>
+      <section class="detail-highlights" aria-live="polite" aria-labelledby="detail-highlights-title">
+        <h3 id="detail-highlights-title">Inside this volume</h3>
+        <ul id="detail-highlights-list">
+          <li>Logical addressing identifies source and destination.</li>
+          <li>Routers choose paths and forward packets hop by hop.</li>
+          <li>IP enables communication across different networks.</li>
+        </ul>
+      </section>
       <dl class="meta-list">
         <div>
           <dt>Binding</dt>
@@ -1765,6 +1816,7 @@
         palette: { paper:"#171a24", paperDeep:"#10131b", paperPale:"#f1eadf", ink:"#f4eee6", inkSoft:"#b9b4ae", wall:"#171a24", shelf:"#3a2118", shelfDark:"#1c0e0a", light:"#f4d7b9", fill:"#9fb3c9" },
         width: 1.02, height: 1.58, depth: 0.26,
         chapters: ["What Layer 3 Does", "Routing & Forwarding", "The Journey of a Packet"],
+        highlights: ["Logical addressing identifies source and destination.", "Routers choose paths and forward packets hop by hop.", "IP enables communication across different networks."],
         sections: [
           { intro:"The network layer is Layer 3 of the OSI model. It carries packets between devices that may sit on different networks.", bullets:["Logical addressing identifies source and destination.","Routing selects a path through interconnected networks.","Forwarding moves each packet to the next hop."] },
           { intro:"Routing and forwarding work together, but they are not the same job.", bullets:["Routing builds or learns the path.","A routing table stores destination prefixes and next hops.","Forwarding sends the packet out through the chosen interface."] },
@@ -1791,6 +1843,7 @@
         palette: { paper:"#762f1b", paperDeep:"#572113", paperPale:"#ffe4c5", ink:"#fff0df", inkSoft:"#e3bfa8", wall:"#762f1b", shelf:"#402015", shelfDark:"#1d0d08", light:"#ffd19a", fill:"#dc8c6b" },
         width: 1.1, height: 1.46, depth: 0.29,
         chapters: ["Read an IPv4 Address", "Networks & Subnets", "Private & Public Space"],
+        highlights: ["32-bit address written as four decimal octets.", "CIDR prefix separates network bits from host bits.", "Private ranges: 10/8, 172.16/12 and 192.168/16."],
         sections: [
           { intro:"An IPv4 address contains 32 bits. It is commonly shown as four 8-bit octets in dotted-decimal form.", bullets:["Example: 192.168.1.10","Each octet ranges from 0 to 255.","The address identifies an interface on an IP network."] },
           { intro:"A subnet mask or CIDR prefix separates the network portion from the host portion.", bullets:["/24 means the first 24 bits are the network prefix.","A /24 contains 256 total addresses.","Subnetting creates smaller, more manageable networks."] },
@@ -1817,6 +1870,7 @@
         palette: { paper:"#164e55", paperDeep:"#103940", paperPale:"#e2f0e9", ink:"#f2faf4", inkSoft:"#b6d6d0", wall:"#164e55", shelf:"#3b2418", shelfDark:"#1c0f09", light:"#d4f1e9", fill:"#77b8b1" },
         width: 0.98, height: 1.55, depth: 0.25,
         chapters: ["The 128-bit Address", "Notation & Shortening", "Address Types"],
+        highlights: ["128-bit address written in eight hexadecimal groups.", "Leading zeroes can be omitted; :: compresses one zero run.", "Unicast, multicast and anycast — no broadcast."],
         sections: [
           { intro:"IPv6 uses 128 bits, written as eight groups of hexadecimal digits separated by colons.", bullets:["Example: 2001:0db8:0000:0000:0000:ff00:0042:8329","Each group represents 16 bits.","The larger space supports an enormous number of interfaces."] },
           { intro:"IPv6 notation can be shortened without changing the address value.", bullets:["Leading zeroes in a group may be omitted.","One consecutive run of zero groups may be replaced by ::","Use :: only once in an address."] },
@@ -1843,6 +1897,7 @@
         palette: { paper:"#142a80", paperDeep:"#0b1953", paperPale:"#dbe8f1", ink:"#f3f5f2", inkSoft:"#b5c7e9", wall:"#142a80", shelf:"#3b2117", shelfDark:"#1a0d08", light:"#e5edf2", fill:"#5f85dc" },
         width: 1.08, height: 1.68, depth: 0.25,
         chapters: ["Why Internetworking?", "Inside a Router", "Choosing a Route"],
+        highlights: ["Routers connect separate IP networks.", "Each router checks the destination and selects a next hop.", "Routes may be connected, static or dynamically learned."],
         sections: [
           { intro:"A single organisation may use many networks. Internetworking allows those networks to exchange IP packets.", bullets:["Each network has its own address range.","Routers connect networks and separate broadcast domains.","IP provides a common packet format across different link technologies."] },
           { intro:"A router receives a frame, examines the IP packet, and decides where to send it next.", bullets:["Remove the incoming link-layer frame.","Inspect the destination IP address.","Look up the best matching route.","Encapsulate the packet in a new outgoing frame."] },
@@ -1869,6 +1924,7 @@
         palette: { paper:"#76252c", paperDeep:"#501820", paperPale:"#ffe0d5", ink:"#fff0e8", inkSoft:"#e9bbb2", wall:"#76252c", shelf:"#432016", shelfDark:"#1f0d08", light:"#ffd1bc", fill:"#d66d66" },
         width: 1, height: 1.48, depth: 0.3,
         chapters: ["Header at a Glance", "Fields That Matter", "Fragmentation & TTL"],
+        highlights: ["Header is 20–60 bytes; payload follows it.", "Source, destination, protocol, TTL and checksum fields.", "Fragmentation uses identification, flags and offset."],
         sections: [
           { intro:"An IPv4 datagram is made of a header followed by data. The header is normally 20 bytes and can grow to 60 bytes.", bullets:["Version identifies IPv4.","IHL gives the header length.","Total Length gives the full datagram size."] },
           { intro:"The header carries the information routers and hosts need to process the datagram.", bullets:["Source and Destination: 32-bit addresses.","Protocol: identifies TCP, UDP, or another payload protocol.","TTL: limits how long the packet can circulate.","Header Checksum: checks the IPv4 header."] },
@@ -1895,6 +1951,7 @@
         palette: { paper:"#254638", paperDeep:"#173327", paperPale:"#e8eddf", ink:"#f5f3e9", inkSoft:"#c2cfb9", wall:"#254638", shelf:"#3a2118", shelfDark:"#1c0e0a", light:"#e3e7c8", fill:"#83a98b" },
         width: 1.04, height: 1.58, depth: 0.27,
         chapters: ["The 40-byte Header", "Key Header Fields", "Why IPv6?"],
+        highlights: ["Fixed 40-byte base header with extension headers.", "128-bit source and destination; Hop Limit replaces TTL.", "Huge address space and simpler base-header processing."],
         sections: [
           { intro:"The IPv6 base header has a fixed length of 40 bytes. It is followed by extension headers, if present, and then the payload.", bullets:["Version: 6","Traffic Class and Flow Label: traffic handling hints","Payload Length: bytes after the base header","Next Header: identifies the next header or upper-layer protocol"] },
           { intro:"IPv6 keeps the essential forwarding information in a compact, fixed-format header.", bullets:["Hop Limit replaces IPv4 TTL.","Source Address: 128 bits.","Destination Address: 128 bits.","There is no base-header checksum."] },
@@ -1921,6 +1978,7 @@
         palette: { paper:"#343b46", paperDeep:"#252b34", paperPale:"#e8ebed", ink:"#f4f5f4", inkSoft:"#c3c9ce", wall:"#343b46", shelf:"#3a2118", shelfDark:"#1c0e0a", light:"#e0e7ed", fill:"#9daab6" },
         width: 1.02, height: 1.58, depth: 0.26,
         chapters: ["Course outline", "Guided practice", "Knowledge check"],
+        highlights: ["Short guided lessons are planned.", "Addressing and packet walkthrough activities are planned.", "Knowledge checks and worked answers will follow."],
         sections: [
           { intro:"This course volume is reserved for a future guided introduction to the network layer.", bullets:["Short lessons","Visual examples","Step-by-step practice"] },
           { intro:"Practice activities will be added in a later release.", bullets:["Addressing exercises","Packet walkthroughs","Routing scenarios"] },
@@ -1980,6 +2038,7 @@
     const detailEyebrow = document.querySelector("#detail-eyebrow");
     const detailTitle = document.querySelector("#detail-title");
     const detailDeck = document.querySelector("#detail-deck");
+    const detailHighlightsList = document.querySelector("#detail-highlights-list");
     const detailBinding = document.querySelector("#detail-binding");
     const detailFormat = document.querySelector("#detail-format");
     const detailTheme = document.querySelector("#detail-theme");
@@ -4308,6 +4367,11 @@
       detailEyebrow.textContent = `Volume ${book.roman} · ${book.discipline}`;
       detailTitle.textContent = book.title;
       detailDeck.textContent = book.deck;
+      detailHighlightsList.replaceChildren(...book.highlights.map((highlight) => {
+        const item = document.createElement("li");
+        item.textContent = highlight;
+        return item;
+      }));
       detailBinding.textContent = book.binding;
       detailFormat.textContent = book.format;
       detailTheme.textContent = book.theme;
