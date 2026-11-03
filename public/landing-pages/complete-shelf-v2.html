@@ -2751,7 +2751,7 @@
       const serif = '400 22px "Iowan Old Style", Baskerville, Georgia, serif';
       const sans = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
 
-      function drawBullets(items, x, y, maxLines = 3) {
+      function drawBullets(ctx, items, x, y, maxLines = 3) {
         let cursorY = y;
         items.slice(0, maxLines).forEach((item, index) => {
           ctx.fillStyle = book.foil;
@@ -2823,7 +2823,7 @@
           ctx.font = serif;
           drawWrappedCanvasText(ctx, section.intro, 54, 365, 40, 27, 4);
           ctx.globalAlpha = 1;
-          drawBullets(section.bullets, 58, 500, 3);
+          drawBullets(ctx, section.bullets, 58, 500, 3);
         } else if (pageIndex === 2 || pageIndex === 6) {
           ctx.font = sans;
           ctx.letterSpacing = "2px";
@@ -2846,7 +2846,7 @@
           ctx.fillStyle = ink;
           ctx.font = '400 38px "Iowan Old Style", Baskerville, Georgia, serif';
           drawWrappedCanvasText(ctx, book.chapters[1], 52, 220, 18, 46, 3);
-          drawBullets(book.notes, 58, 380, 4);
+          drawBullets(ctx, book.notes, 58, 380, 4);
           ctx.globalAlpha = 0.7;
           ctx.strokeRect(54, 680, 404, 1);
           ctx.globalAlpha = 1;
