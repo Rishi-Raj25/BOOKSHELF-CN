@@ -24,12 +24,12 @@ export function CompleteShelfLandingPage() {
   }, []);
 
   return (
-    <main className="shelf-host" aria-label="Working Volumes interactive bookshelf">
+    <main className="shelf-host" aria-label="Network Layer interactive field library">
       <iframe
         ref={frameRef}
         className="shelf-document"
         src="/landing-pages/complete-shelf-v2.html"
-        title="Working Volumes — Seven Tools for Making"
+        title="Network Layer — Interactive Field Library"
         loading="eager"
         allow="fullscreen; autoplay"
         sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-downloads allow-popups allow-pointer-lock"
