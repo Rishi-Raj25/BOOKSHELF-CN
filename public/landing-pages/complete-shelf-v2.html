@@ -7,9 +7,9 @@
   <meta name="theme-color" content="#171a24">
   <meta
     name="description"
-    content="Working Volumes is an original interactive Three.js library of seven tactile field guides for contemporary creative tools."
+    content="An interactive bookshelf of visual field guides to the computer network layer, IPv4, IPv6, routing, and IP packet formats."
   >
-  <title>Working Volumes — Seven Tools for Making</title>
+  <title>Network Layer — Interactive Field Library</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -1633,17 +1633,17 @@
       </div>
 
       <div class="browse-actions">
-        <button class="round-button" id="previous" type="button" aria-label="Previous volume">
+        <button class="round-button" id="previous" type="button" aria-label="Previous field guide">
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m10.5 3.5-4.5 4.5 4.5 4.5"></path></svg>
         </button>
         <button class="text-button" id="inspect" type="button">Open</button>
-        <button class="round-button" id="next" type="button" aria-label="Next volume">
+        <button class="round-button" id="next" type="button" aria-label="Next field guide">
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m5.5 3.5 4.5 4.5-4.5 4.5"></path></svg>
         </button>
       </div>
 
-      <nav class="index-nav" aria-label="Volume index">
-        <div class="markers" id="markers" role="tablist" aria-label="Choose a volume"></div>
+      <nav class="index-nav" aria-label="Field guide index">
+        <div class="markers" id="markers" role="tablist" aria-label="Choose a field guide"></div>
         <p class="microcopy">Wheel · arrows · select</p>
       </nav>
     </section>
@@ -1657,7 +1657,7 @@
       aria-hidden="true"
       inert
     >
-      <button class="close-button" id="close-detail" type="button" aria-label="Return volume to shelf">
+      <button class="close-button" id="close-detail" type="button" aria-label="Return book to shelf">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8"></path></svg>
       </button>
       <p class="eyebrow" id="detail-eyebrow">Volume I · Agentic craft</p>
@@ -1710,24 +1710,24 @@
       <div class="fallback__header">
         <div>
           <p class="fallback__kicker">Working Volumes · Static catalog</p>
-          <h2 id="fallback-title">Seven tools for making.</h2>
+          <h2 id="fallback-title">The network layer, made visible.</h2>
         </div>
         <p class="fallback__status" id="fallback-status">
           The complete catalog remains readable while the interactive shelf is prepared.
         </p>
       </div>
-      <div class="fallback__grid" aria-label="Seven conceptual hardcovers">
-        <article class="fallback-book" style="--book-color:#182a43;--book-foil:#c87046;--book-height:390px"><span>Volume I</span><strong>Codex</strong></article>
-        <article class="fallback-book" style="--book-color:#c24d24;--book-foil:#efc16d;--book-height:356px"><span>Volume II</span><strong>Claude Code</strong></article>
-        <article class="fallback-book" style="--book-color:#afc400;--book-foil:#171a16;--book-height:374px"><span>Volume III</span><strong>Cursor</strong></article>
-        <article class="fallback-book" style="--book-color:#1537a1;--book-foil:#dbe8f1;--book-height:404px"><span>Volume IV</span><strong>Antigravity</strong></article>
-        <article class="fallback-book" style="--book-color:#c83222;--book-foil:#efb0aa;--book-height:365px"><span>Volume V</span><strong>Figma</strong></article>
-        <article class="fallback-book" style="--book-color:#da3b2f;--book-foil:#ff8eab;--book-height:385px"><span>Volume VI</span><strong>Framer</strong></article>
-        <article class="fallback-book" style="--book-color:#78a7bd;--book-foil:#e4e7e5;--book-height:398px"><span>Volume VII</span><strong>Xcode</strong></article>
+      <div class="fallback__grid" aria-label="Six network layer field guides and one reserved mini-course">
+        <article class="fallback-book" style="--book-color:#182a43;--book-foil:#d6a36a;--book-height:390px"><span>Volume I</span><strong>The Network Layer</strong></article>
+        <article class="fallback-book" style="--book-color:#a9472b;--book-foil:#efc16d;--book-height:356px"><span>Volume II</span><strong>IPv4 Addressing</strong></article>
+        <article class="fallback-book" style="--book-color:#17636a;--book-foil:#c6e0dc;--book-height:374px"><span>Volume III</span><strong>IPv6 Addressing</strong></article>
+        <article class="fallback-book" style="--book-color:#24469a;--book-foil:#dbe8f1;--book-height:404px"><span>Volume IV</span><strong>Internetworking</strong></article>
+        <article class="fallback-book" style="--book-color:#8f3036;--book-foil:#efb0aa;--book-height:365px"><span>Volume V</span><strong>The IPv4 Datagram</strong></article>
+        <article class="fallback-book" style="--book-color:#315b45;--book-foil:#d4bb83;--book-height:385px"><span>Volume VI</span><strong>The IPv6 Packet</strong></article>
+        <article class="fallback-book" style="--book-color:#59616d;--book-foil:#d5dbe0;--book-height:398px"><span>Volume VII</span><strong>Mini-course · Soon</strong></article>
       </div>
       <div class="fallback__footer">
-        <span>All bindings, motifs, descriptions, geometry, and cover artworks are original to this conceptual study.</span>
-        <span>Product names are used editorially and remain the property of their respective owners.</span>
+        <span>Six concise field guides cover the network layer and IP. The seventh volume is reserved for a future mini-course.</span>
+        <span>Move through each volume for illustrated explanations, quick-reference notes, and key takeaways.</span>
       </div>
     </section>
 
@@ -1748,234 +1748,185 @@
 
     const BOOKS = [
       {
-        id: "codex",
-        title: "Codex",
+        id: "network-layer",
+        title: "The Network Layer",
         roman: "I",
-        discipline: "Agentic craft",
-        note: "Precise intent, translated into tested systems.",
-        deck: "A field manual for delegating repository work to Codex: state the intent, let the agent trace the system, and treat tests and browser proof as part of the craft.",
-        binding: "Ultramarine cloth · copper foil",
-        format: "148 × 216 mm · imagined edition",
-        theme: "Codex · intent into implementation",
-        motif: "Nested brackets",
-        motifKey: "brackets",
-        paletteLabel: "Ultramarine · bone · copper",
+        discipline: "Foundations",
+        note: "How separate networks become one connected world.",
+        deck: "The network layer moves packets across interconnected networks. It gives devices logical addresses, chooses paths, and forwards data toward its destination.",
+        binding: "Midnight-blue cloth · copper foil",
+        format: "Field guide 01 · Network fundamentals",
+        theme: "Source → router → destination",
+        motif: "Connected nodes",
+        motifKey: "modules",
+        paletteLabel: "Midnight · parchment · copper",
         color: "#182a43",
-        foil: "#c87046",
-        palette: {
-          paper: "#171a24",
-          paperDeep: "#10131b",
-          paperPale: "#f1eadf",
-          ink: "#f4eee6",
-          inkSoft: "#b9b4ae",
-          wall: "#171a24",
-          shelf: "#3a2118",
-          shelfDark: "#1c0e0a",
-          light: "#f4d7b9",
-          fill: "#9fb3c9"
-        },
-        width: 1.02,
-        height: 1.58,
-        depth: 0.26,
-        chapters: ["Intent", "Repository atlas", "Proof"],
+        foil: "#d6a36a",
+        palette: { paper:"#171a24", paperDeep:"#10131b", paperPale:"#f1eadf", ink:"#f4eee6", inkSoft:"#b9b4ae", wall:"#171a24", shelf:"#3a2118", shelfDark:"#1c0e0a", light:"#f4d7b9", fill:"#9fb3c9" },
+        width: 1.02, height: 1.58, depth: 0.26,
+        chapters: ["What Layer 3 Does", "Routing & Forwarding", "The Journey of a Packet"],
+        sections: [
+          { intro:"The network layer is Layer 3 of the OSI model. It carries packets between devices that may sit on different networks.", bullets:["Logical addressing identifies source and destination.","Routing selects a path through interconnected networks.","Forwarding moves each packet to the next hop."] },
+          { intro:"Routing and forwarding work together, but they are not the same job.", bullets:["Routing builds or learns the path.","A routing table stores destination prefixes and next hops.","Forwarding sends the packet out through the chosen interface."] },
+          { intro:"A packet rarely travels in one direct jump. Routers move it hop by hop until it reaches the destination network.", bullets:["The source host sends the packet to its default gateway.","Each router checks the destination IP address.","The final network delivers the packet to the destination host."] }
+        ],
+        notes:["Layer 3 connects different networks.","Routers operate primarily at the network layer.","The IP address stays end-to-end; the link-layer frame changes at each hop."],
         seed: 11
       },
       {
-        id: "claude-code",
-        title: "Claude Code",
+        id: "ipv4-addressing",
+        title: "IPv4 Addressing",
         roman: "II",
-        discipline: "Contextual reasoning",
-        note: "Long context, held with deliberation and care.",
-        deck: "An annotated volume on Claude Code’s context-first practice: read the project, reason across files, preserve the surrounding work, and make every intervention explainable.",
+        discipline: "32-bit addresses",
+        note: "A four-part address with a network and a host.",
+        deck: "IPv4 uses 32-bit logical addresses, usually written as four decimal octets. Subnets divide an address space into manageable network blocks.",
         binding: "Burnt-orange cloth · antique-gold foil",
-        format: "156 × 228 mm · imagined edition",
-        theme: "Claude Code · context before intervention",
-        motif: "Interlaced paths",
+        format: "Field guide 02 · Addressing",
+        theme: "192.168.1.10 / 24",
+        motif: "Four octets",
         motifKey: "paths",
-        paletteLabel: "Burnt orange · cream · burgundy",
-        color: "#c24d24",
+        paletteLabel: "Terracotta · cream · gold",
+        color: "#a9472b",
         foil: "#efc16d",
-        palette: {
-          paper: "#762f1b",
-          paperDeep: "#572113",
-          paperPale: "#ffe4c5",
-          ink: "#fff0df",
-          inkSoft: "#e3bfa8",
-          wall: "#762f1b",
-          shelf: "#402015",
-          shelfDark: "#1d0d08",
-          light: "#ffd19a",
-          fill: "#dc8c6b"
-        },
-        width: 1.1,
-        height: 1.46,
-        depth: 0.29,
-        chapters: ["Context", "Deliberation", "Intervention"],
+        palette: { paper:"#762f1b", paperDeep:"#572113", paperPale:"#ffe4c5", ink:"#fff0df", inkSoft:"#e3bfa8", wall:"#762f1b", shelf:"#402015", shelfDark:"#1d0d08", light:"#ffd19a", fill:"#dc8c6b" },
+        width: 1.1, height: 1.46, depth: 0.29,
+        chapters: ["Read an IPv4 Address", "Networks & Subnets", "Private & Public Space"],
+        sections: [
+          { intro:"An IPv4 address contains 32 bits. It is commonly shown as four 8-bit octets in dotted-decimal form.", bullets:["Example: 192.168.1.10","Each octet ranges from 0 to 255.","The address identifies an interface on an IP network."] },
+          { intro:"A subnet mask or CIDR prefix separates the network portion from the host portion.", bullets:["/24 means the first 24 bits are the network prefix.","A /24 contains 256 total addresses.","Subnetting creates smaller, more manageable networks."] },
+          { intro:"IPv4 addresses can be public or private. Private ranges are used inside local networks and are not globally routed.", bullets:["10.0.0.0/8","172.16.0.0/12","192.168.0.0/16","NAT commonly lets private hosts share a public IPv4 address."] }
+        ],
+        notes:["32 bits = 4 octets.","CIDR writes the prefix as /n.","Network address and broadcast address have special roles in traditional IPv4 subnets."],
         seed: 22
       },
       {
-        id: "cursor",
-        title: "Cursor",
+        id: "ipv6-addressing",
+        title: "IPv6 Addressing",
         roman: "III",
-        discipline: "Directed editing",
-        note: "A fast line between the thought and the file.",
-        deck: "A compact handbook for editing with Cursor: navigate living codebases quickly, keep the active context close, and change the right surface without disturbing the rest.",
-        binding: "Citron cloth · black gloss foil",
-        format: "140 × 210 mm · imagined edition",
-        theme: "Cursor · navigation with momentum",
-        motif: "Directional caret",
+        discipline: "128-bit addresses",
+        note: "A much larger address space for a connected world.",
+        deck: "IPv6 expands the address to 128 bits and writes it in hexadecimal groups separated by colons. Its design supports large-scale addressing and simpler network operation.",
+        binding: "Deep-teal cloth · pale-silver foil",
+        format: "Field guide 03 · Addressing",
+        theme: "2001:db8::1",
+        motif: "Hexadecimal groups",
         motifKey: "caret",
-        paletteLabel: "Citron · ink · off-white",
-        color: "#afc400",
-        foil: "#171a16",
-        palette: {
-          paper: "#c3cf21",
-          paperDeep: "#9eaa16",
-          paperPale: "#f0f2c9",
-          ink: "#171914",
-          inkSoft: "#485015",
-          wall: "#c3cf21",
-          shelf: "#3b2418",
-          shelfDark: "#1c0f09",
-          light: "#fff6ce",
-          fill: "#dce37e"
-        },
-        width: 0.92,
-        height: 1.52,
-        depth: 0.22,
-        chapters: ["Navigation", "Selection", "Momentum"],
+        paletteLabel: "Deep teal · mist · silver",
+        color: "#17636a",
+        foil: "#c6e0dc",
+        palette: { paper:"#164e55", paperDeep:"#103940", paperPale:"#e2f0e9", ink:"#f2faf4", inkSoft:"#b6d6d0", wall:"#164e55", shelf:"#3b2418", shelfDark:"#1c0f09", light:"#d4f1e9", fill:"#77b8b1" },
+        width: 0.98, height: 1.55, depth: 0.25,
+        chapters: ["The 128-bit Address", "Notation & Shortening", "Address Types"],
+        sections: [
+          { intro:"IPv6 uses 128 bits, written as eight groups of hexadecimal digits separated by colons.", bullets:["Example: 2001:0db8:0000:0000:0000:ff00:0042:8329","Each group represents 16 bits.","The larger space supports an enormous number of interfaces."] },
+          { intro:"IPv6 notation can be shortened without changing the address value.", bullets:["Leading zeroes in a group may be omitted.","One consecutive run of zero groups may be replaced by ::","Use :: only once in an address."] },
+          { intro:"IPv6 defines several address types for different delivery patterns.", bullets:["Unicast: one interface.","Multicast: a group of interfaces.","Anycast: the nearest member of a group.","IPv6 does not use broadcast addresses."] }
+        ],
+        notes:["Loopback: ::1","Unspecified: ::","2001:db8::/32 is reserved for documentation examples."],
         seed: 33
       },
       {
-        id: "antigravity",
-        title: "Antigravity",
+        id: "internetworking",
+        title: "Internetworking",
         roman: "IV",
-        discipline: "Spatial systems",
-        note: "Ideas released from the flatness of the page.",
-        deck: "A speculative atlas for Antigravity’s spatial way of working: let agents move across tools, make complex structures visible, and understand the system through motion.",
+        discipline: "Networks in motion",
+        note: "Routers connect independent networks into a larger whole.",
+        deck: "Internetworking links distinct IP networks so hosts can communicate across boundaries. Routers examine destination addresses and choose the next hop.",
         binding: "Cobalt cloth · cool-silver foil",
-        format: "162 × 240 mm · imagined edition",
-        theme: "Antigravity · structure in motion",
-        motif: "Suspended orbits",
+        format: "Field guide 04 · Routing",
+        theme: "Network A → Router → Network B",
+        motif: "Interconnected paths",
         motifKey: "orbits",
         paletteLabel: "Cobalt · sky · silver",
-        color: "#1537a1",
+        color: "#24469a",
         foil: "#dbe8f1",
-        palette: {
-          paper: "#142a80",
-          paperDeep: "#0b1953",
-          paperPale: "#dbe8f1",
-          ink: "#f3f5f2",
-          inkSoft: "#b5c7e9",
-          wall: "#142a80",
-          shelf: "#3b2117",
-          shelfDark: "#1a0d08",
-          light: "#e5edf2",
-          fill: "#5f85dc"
-        },
-        width: 1.08,
-        height: 1.68,
-        depth: 0.25,
-        chapters: ["System map", "Tool orbit", "Spatial proof"],
+        palette: { paper:"#142a80", paperDeep:"#0b1953", paperPale:"#dbe8f1", ink:"#f3f5f2", inkSoft:"#b5c7e9", wall:"#142a80", shelf:"#3b2117", shelfDark:"#1a0d08", light:"#e5edf2", fill:"#5f85dc" },
+        width: 1.08, height: 1.68, depth: 0.25,
+        chapters: ["Why Internetworking?", "Inside a Router", "Choosing a Route"],
+        sections: [
+          { intro:"A single organisation may use many networks. Internetworking allows those networks to exchange IP packets.", bullets:["Each network has its own address range.","Routers connect networks and separate broadcast domains.","IP provides a common packet format across different link technologies."] },
+          { intro:"A router receives a frame, examines the IP packet, and decides where to send it next.", bullets:["Remove the incoming link-layer frame.","Inspect the destination IP address.","Look up the best matching route.","Encapsulate the packet in a new outgoing frame."] },
+          { intro:"Routers use routing information to select a next hop toward the destination.", bullets:["Connected routes describe directly attached networks.","Static routes are configured by an administrator.","Dynamic routing protocols exchange reachability information."] }
+        ],
+        notes:["A router does not need the full end-to-end path.","Each hop makes its own forwarding decision.","The destination IP address guides the journey."],
         seed: 44
       },
       {
-        id: "figma",
-        title: "Figma",
+        id: "ipv4-datagram",
+        title: "The IPv4 Datagram",
         roman: "V",
-        discipline: "Collaborative form",
-        note: "Components, conversations, and systems in common.",
-        deck: "A modular reader on designing in Figma: move from loose frames to shared components, invite critique into the canvas, and leave behind a system others can extend.",
-        binding: "Vermilion cloth · rose-gold foil",
-        format: "150 × 220 mm · imagined edition",
-        theme: "Figma · a shared visual language",
-        motif: "Connected modules",
-        motifKey: "modules",
-        paletteLabel: "Vermilion · plum · blush",
-        color: "#c83222",
+        discipline: "Packet anatomy",
+        note: "A header that tells the network how to handle a packet.",
+        deck: "An IPv4 datagram contains a header and payload. Header fields support delivery, fragmentation, lifetime control, and identification of the upper-layer protocol.",
+        binding: "Oxblood cloth · rose-gold foil",
+        format: "Field guide 05 · Internet Protocol",
+        theme: "Header + payload",
+        motif: "Structured fields",
+        motifKey: "frames",
+        paletteLabel: "Oxblood · blush · rose gold",
+        color: "#8f3036",
         foil: "#efb0aa",
-        palette: {
-          paper: "#a62c21",
-          paperDeep: "#7f1e17",
-          paperPale: "#ffe0d5",
-          ink: "#fff0e8",
-          inkSoft: "#e9bbb2",
-          wall: "#a62c21",
-          shelf: "#432016",
-          shelfDark: "#1f0d08",
-          light: "#ffd1bc",
-          fill: "#d66d66"
-        },
-        width: 1,
-        height: 1.48,
-        depth: 0.3,
-        chapters: ["Frames", "Components", "Common language"],
+        palette: { paper:"#76252c", paperDeep:"#501820", paperPale:"#ffe0d5", ink:"#fff0e8", inkSoft:"#e9bbb2", wall:"#76252c", shelf:"#432016", shelfDark:"#1f0d08", light:"#ffd1bc", fill:"#d66d66" },
+        width: 1, height: 1.48, depth: 0.3,
+        chapters: ["Header at a Glance", "Fields That Matter", "Fragmentation & TTL"],
+        sections: [
+          { intro:"An IPv4 datagram is made of a header followed by data. The header is normally 20 bytes and can grow to 60 bytes.", bullets:["Version identifies IPv4.","IHL gives the header length.","Total Length gives the full datagram size."] },
+          { intro:"The header carries the information routers and hosts need to process the datagram.", bullets:["Source and Destination: 32-bit addresses.","Protocol: identifies TCP, UDP, or another payload protocol.","TTL: limits how long the packet can circulate.","Header Checksum: checks the IPv4 header."] },
+          { intro:"IPv4 can fragment a datagram when it is too large for a link, subject to the packet's fragmentation settings.", bullets:["Identification groups fragments from one datagram.","Flags control fragmentation behaviour.","Fragment Offset locates each fragment's data.","TTL is reduced by routers; zero means discard."] }
+        ],
+        notes:["Minimum header: 20 bytes.","Maximum header: 60 bytes.","The payload begins after the header and any options."],
         seed: 55
       },
       {
-        id: "framer",
-        title: "Framer",
+        id: "ipv6-packet",
+        title: "The IPv6 Packet",
         roman: "VI",
-        discipline: "Interactive composition",
-        note: "Structure becomes rhythm when the page begins to move.",
-        deck: "A studio notebook for Framer: compose responsive pages directly in the medium, then tune type, layout, and interaction until motion feels native to the structure.",
-        binding: "Coral cloth · copper foil",
-        format: "146 × 224 mm · imagined edition",
-        theme: "Framer · composition through motion",
-        motif: "Folded frames",
-        motifKey: "frames",
-        paletteLabel: "Coral · pink · oxblood",
-        color: "#da3b2f",
-        foil: "#ff8eab",
-        palette: {
-          paper: "#ae2830",
-          paperDeep: "#7f1822",
-          paperPale: "#ffe0df",
-          ink: "#fff0e9",
-          inkSoft: "#efb9b4",
-          wall: "#ae2830",
-          shelf: "#402016",
-          shelfDark: "#1d0d08",
-          light: "#ffc3bb",
-          fill: "#e46d78"
-        },
-        width: 0.96,
-        height: 1.57,
-        depth: 0.24,
-        chapters: ["Structure", "Rhythm", "Responsive motion"],
+        discipline: "Modern packet format",
+        note: "A streamlined fixed header, with room to extend.",
+        deck: "Every IPv6 packet begins with a 40-byte base header. Optional information is carried in extension headers, keeping the base header simpler to process.",
+        binding: "Forest-green cloth · warm-brass foil",
+        format: "Field guide 06 · Internet Protocol",
+        theme: "40-byte base header + payload",
+        motif: "Fixed header grid",
+        motifKey: "brackets",
+        paletteLabel: "Forest · parchment · brass",
+        color: "#315b45",
+        foil: "#d4bb83",
+        palette: { paper:"#254638", paperDeep:"#173327", paperPale:"#e8eddf", ink:"#f5f3e9", inkSoft:"#c2cfb9", wall:"#254638", shelf:"#3a2118", shelfDark:"#1c0e0a", light:"#e3e7c8", fill:"#83a98b" },
+        width: 1.04, height: 1.58, depth: 0.27,
+        chapters: ["The 40-byte Header", "Key Header Fields", "Why IPv6?"],
+        sections: [
+          { intro:"The IPv6 base header has a fixed length of 40 bytes. It is followed by extension headers, if present, and then the payload.", bullets:["Version: 6","Traffic Class and Flow Label: traffic handling hints","Payload Length: bytes after the base header","Next Header: identifies the next header or upper-layer protocol"] },
+          { intro:"IPv6 keeps the essential forwarding information in a compact, fixed-format header.", bullets:["Hop Limit replaces IPv4 TTL.","Source Address: 128 bits.","Destination Address: 128 bits.","There is no base-header checksum."] },
+          { intro:"IPv6 was designed to address the limits of IPv4 and support continued Internet growth.", bullets:["Vast 128-bit address space.","More efficient base-header processing.","Autoconfiguration support.","No broadcast; multicast and anycast are used instead."] }
+        ],
+        notes:["Base header: exactly 40 bytes.","Routers do not fragment IPv6 packets; the source uses Path MTU Discovery.","IPsec support is part of the IPv6 standards, but it does not make every IPv6 connection automatically secure."],
         seed: 66
       },
       {
-        id: "xcode",
-        title: "Xcode",
+        id: "mini-course",
+        title: "Mini-course",
         roman: "VII",
-        discipline: "Native making",
-        note: "A measured path from blueprint to living device.",
-        deck: "A technical folio for making with Xcode: shape the Swift interface, compile against the platform, inspect the runtime, and refine until the result feels native.",
-        binding: "Icy-cyan cloth · aluminum foil",
-        format: "158 × 232 mm · imagined edition",
-        theme: "Xcode · blueprint into native form",
-        motif: "Drafting compass",
-        motifKey: "compass",
-        paletteLabel: "Icy cyan · navy · aluminum",
-        color: "#78a7bd",
-        foil: "#e4e7e5",
-        palette: {
-          paper: "#7ea5b7",
-          paperDeep: "#5e8699",
-          paperPale: "#e6f0f2",
-          ink: "#102a36",
-          inkSoft: "#274b5a",
-          wall: "#7ea5b7",
-          shelf: "#382017",
-          shelfDark: "#1b0e09",
-          light: "#eef5f2",
-          fill: "#add1df"
-        },
-        width: 1.12,
-        height: 1.63,
-        depth: 0.28,
-        chapters: ["Blueprint", "Build", "Runtime"],
+        discipline: "Coming soon",
+        note: "A guided learning experience is being prepared.",
+        deck: "This volume is reserved for a short guided course. Lessons, activities, and checkpoints will be added in a later update.",
+        binding: "Slate cloth · soft-silver foil",
+        format: "Reserved volume · course edition",
+        theme: "Learn · practise · review",
+        motif: "Open pages",
+        motifKey: "modules",
+        paletteLabel: "Slate · parchment · silver",
+        color: "#59616d",
+        foil: "#d5dbe0",
+        palette: { paper:"#343b46", paperDeep:"#252b34", paperPale:"#e8ebed", ink:"#f4f5f4", inkSoft:"#c3c9ce", wall:"#343b46", shelf:"#3a2118", shelfDark:"#1c0e0a", light:"#e0e7ed", fill:"#9daab6" },
+        width: 1.02, height: 1.58, depth: 0.26,
+        chapters: ["Course outline", "Guided practice", "Knowledge check"],
+        sections: [
+          { intro:"This course volume is reserved for a future guided introduction to the network layer.", bullets:["Short lessons","Visual examples","Step-by-step practice"] },
+          { intro:"Practice activities will be added in a later release.", bullets:["Addressing exercises","Packet walkthroughs","Routing scenarios"] },
+          { intro:"A knowledge check will help learners review the core ideas.", bullets:["Quick questions","Worked answers","Progress checkpoints"] }
+        ],
+        notes:["Course content is not available yet.","The six subject volumes are ready to explore."],
         seed: 77
       }
     ];
@@ -2409,7 +2360,7 @@
       canvasTexture.height = 1152;
       const ctx = canvasTexture.getContext("2d");
 
-      if (coverAtlasReady) {
+      if (false && coverAtlasReady) {
         const [sourceX, sourceY, sourceWidth, sourceHeight] = COVER_CROPS[BOOKS.indexOf(book)];
         ctx.drawImage(
           coverAtlasImage,
@@ -2797,6 +2748,24 @@
       const pageCount = 8;
       const inkColor = new THREE.Color(book.color).lerp(new THREE.Color(0x211b16), 0.62);
       const ink = `#${inkColor.getHexString()}`;
+      const serif = '400 22px "Iowan Old Style", Baskerville, Georgia, serif';
+      const sans = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
+
+      function drawBullets(items, x, y, maxLines = 3) {
+        let cursorY = y;
+        items.slice(0, maxLines).forEach((item, index) => {
+          ctx.fillStyle = book.foil;
+          ctx.beginPath();
+          ctx.arc(x + 4, cursorY - 6, 3, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = ink;
+          ctx.globalAlpha = 0.82;
+          ctx.font = '400 17px "Iowan Old Style", Baskerville, Georgia, serif';
+          drawWrappedCanvasText(ctx, item, x + 18, cursorY, 34, 23, 3);
+          cursorY += 112;
+        });
+        ctx.globalAlpha = 1;
+      }
 
       return Array.from({ length: pageCount }, (_, pageIndex) => {
         const canvas = document.createElement("canvas");
@@ -2812,11 +2781,10 @@
         ctx.strokeStyle = ink;
         ctx.textAlign = "left";
         ctx.textBaseline = "alphabetic";
-
         ctx.globalAlpha = 0.58;
-        ctx.font = '500 10px Inter, "Helvetica Neue", Arial, sans-serif';
+        ctx.font = sans;
         ctx.letterSpacing = "1.8px";
-        ctx.fillText(`WORKING VOLUMES  /  ${book.roman}`, 48, 48);
+        ctx.fillText(`NETWORK LAYER  /  ${book.roman}`, 48, 48);
         ctx.textAlign = "right";
         ctx.fillText(pad(pageIndex + 1), logicalWidth - 48, 48);
         ctx.textAlign = "left";
@@ -2824,131 +2792,92 @@
         ctx.globalAlpha = 1;
 
         if (pageIndex === 0) {
-          ctx.font = '500 12px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.font = sans;
           ctx.letterSpacing = "2.3px";
+          ctx.fillStyle = book.foil;
           ctx.fillText(book.discipline.toUpperCase(), 54, 174);
-          ctx.font = `400 ${book.title.length > 10 ? 48 : 58}px "Iowan Old Style", Baskerville, Georgia, serif`;
+          ctx.fillStyle = ink;
+          ctx.font = `400 ${book.title.length > 16 ? 42 : 54}px "Iowan Old Style", Baskerville, Georgia, serif`;
           ctx.letterSpacing = "0px";
-          drawWrappedCanvasText(ctx, book.title, 52, 246, 18, 58, 2);
-          ctx.globalAlpha = 0.55;
+          drawWrappedCanvasText(ctx, book.title, 52, 246, 18, 58, 3);
+          ctx.globalAlpha = 0.72;
           ctx.font = '400 22px "Iowan Old Style", Baskerville, Georgia, serif';
           drawWrappedCanvasText(ctx, book.note, 54, 462, 36, 30, 4);
-        } else if (pageIndex === 1 || pageIndex === 3) {
-          const chapterIndex = pageIndex === 1 ? 0 : 1;
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = book.foil;
+          ctx.font = sans;
+          ctx.letterSpacing = "1.5px";
+          ctx.fillText("A VISUAL FIELD GUIDE", 54, 680);
+        } else if (pageIndex === 1 || pageIndex === 3 || pageIndex === 5) {
+          const chapterIndex = pageIndex === 1 ? 0 : pageIndex === 3 ? 1 : 2;
+          const section = book.sections[chapterIndex];
+          ctx.font = sans;
           ctx.letterSpacing = "2px";
-          ctx.fillText(`CHAPTER ${pad(chapterIndex + 1)}`, 54, 166);
-          ctx.font = '400 49px "Iowan Old Style", Baskerville, Georgia, serif';
+          ctx.fillStyle = book.foil;
+          ctx.fillText(`CHAPTER 0${chapterIndex + 1}`, 54, 142);
+          ctx.fillStyle = ink;
+          ctx.font = `400 ${book.chapters[chapterIndex].length > 22 ? 37 : 45}px "Iowan Old Style", Baskerville, Georgia, serif`;
           ctx.letterSpacing = "0px";
-          drawWrappedCanvasText(ctx, book.chapters[chapterIndex], 52, 244, 18, 54, 3);
-          ctx.globalAlpha = 0.52;
-          ctx.font = '400 20px "Iowan Old Style", Baskerville, Georgia, serif';
-          drawWrappedCanvasText(
-            ctx,
-            chapterIndex === 0 ? book.note : book.deck,
-            54,
-            438,
-            42,
-            28,
-            6
-          );
-        } else if (pageIndex === 2) {
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
-          ctx.letterSpacing = "2px";
-          ctx.fillText("PLATE 01  /  SYSTEM MOTIF", 54, 146);
-          ctx.save();
-          ctx.globalAlpha = 0.58;
-          drawMotif(ctx, { ...book, foil: ink }, logicalWidth, logicalHeight * 0.92);
-          ctx.restore();
-          ctx.globalAlpha = 0.48;
-          ctx.font = '400 17px "Iowan Old Style", Baskerville, Georgia, serif';
-          drawWrappedCanvasText(ctx, book.theme, 54, 650, 44, 24, 3);
-        } else if (pageIndex === 4) {
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
-          ctx.letterSpacing = "2px";
-          ctx.fillText(`NOTES  /  ${book.chapters[1].toUpperCase()}`, 54, 138);
-          ctx.globalAlpha = 0.44;
-          for (let column = 0; column < 2; column += 1) {
-            const left = 54 + column * 214;
-            for (let line = 0; line < 24; line += 1) {
-              const width = line % 7 === 6 ? 72 + random() * 54 : 138 + random() * 44;
-              ctx.fillRect(left, 190 + line * 18, width, 1.25);
-            }
-          }
+          drawWrappedCanvasText(ctx, book.chapters[chapterIndex], 52, 218, 18, 50, 3);
           ctx.globalAlpha = 0.78;
-          ctx.strokeRect(54, 654, 404, 54);
-          ctx.font = '500 10px Inter, "Helvetica Neue", Arial, sans-serif';
-          ctx.letterSpacing = "1.4px";
-          ctx.fillText(book.motif.toUpperCase(), 70, 686);
-        } else if (pageIndex === 5) {
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.font = serif;
+          drawWrappedCanvasText(ctx, section.intro, 54, 365, 40, 27, 4);
+          ctx.globalAlpha = 1;
+          drawBullets(section.bullets, 58, 500, 3);
+        } else if (pageIndex === 2 || pageIndex === 6) {
+          ctx.font = sans;
           ctx.letterSpacing = "2px";
-          ctx.fillText("CHAPTER 03", 54, 166);
-          ctx.font = '400 49px "Iowan Old Style", Baskerville, Georgia, serif';
-          ctx.letterSpacing = "0px";
-          drawWrappedCanvasText(ctx, book.chapters[2], 52, 244, 18, 54, 3);
-          ctx.globalAlpha = 0.52;
-          ctx.font = '400 20px "Iowan Old Style", Baskerville, Georgia, serif';
-          drawWrappedCanvasText(ctx, book.deck, 54, 438, 42, 28, 6);
-        } else if (pageIndex === 6) {
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
-          ctx.letterSpacing = "2px";
-          ctx.fillText("PLATE 02  /  TECHNICAL SYSTEM", 54, 146);
+          ctx.fillStyle = book.foil;
+          ctx.fillText(pageIndex === 2 ? "PLATE 01  /  CONCEPT" : "PLATE 02  /  QUICK REFERENCE", 54, 146);
           ctx.save();
-          ctx.translate(logicalWidth * 0.5, 380);
-          ctx.globalAlpha = 0.55;
-          for (let ring = 0; ring < 5; ring += 1) {
-            const radius = 38 + ring * 34;
-            ctx.beginPath();
-            ctx.arc(0, 0, radius, 0, Math.PI * 2);
-            ctx.stroke();
-          }
-          for (let spoke = 0; spoke < 8; spoke += 1) {
-            const angle = spoke * Math.PI * 0.25;
-            ctx.beginPath();
-            ctx.moveTo(Math.cos(angle) * 36, Math.sin(angle) * 36);
-            ctx.lineTo(Math.cos(angle) * 176, Math.sin(angle) * 176);
-            ctx.stroke();
-          }
+          ctx.globalAlpha = 0.62;
+          drawMotif(ctx, { ...book, foil: ink }, logicalWidth, logicalHeight * 0.9);
           ctx.restore();
-          ctx.globalAlpha = 0.48;
-          ctx.font = '400 17px "Iowan Old Style", Baskerville, Georgia, serif';
-          drawWrappedCanvasText(ctx, book.theme, 54, 650, 44, 24, 3);
-        } else {
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.fillStyle = ink;
+          ctx.globalAlpha = 0.82;
+          ctx.font = '400 19px "Iowan Old Style", Baskerville, Georgia, serif';
+          drawWrappedCanvasText(ctx, pageIndex === 2 ? book.theme : book.chapters[2], 54, 650, 42, 25, 3);
+          ctx.globalAlpha = 1;
+        } else if (pageIndex === 4) {
+          ctx.font = sans;
           ctx.letterSpacing = "2px";
-          ctx.fillText("COLOPHON", 54, 164);
-          ctx.font = '400 32px "Iowan Old Style", Baskerville, Georgia, serif';
-          ctx.letterSpacing = "0px";
-          ctx.fillText(book.title, 54, 230);
-          ctx.globalAlpha = 0.58;
-          ctx.font = '400 18px "Iowan Old Style", Baskerville, Georgia, serif';
-          drawWrappedCanvasText(
-            ctx,
-            `${book.binding}. ${book.format}. Conceived as an original editorial study for Working Volumes.`,
-            54,
-            306,
-            44,
-            28,
-            7
-          );
-          ctx.globalAlpha = 0.74;
-          ctx.font = '500 10px Inter, "Helvetica Neue", Arial, sans-serif';
-          ctx.letterSpacing = "1.8px";
-          ctx.fillText(`SPECIMEN ${book.roman} / ${book.seed}  ·  IMAGINED EDITION`, 54, 676);
+          ctx.fillStyle = book.foil;
+          ctx.fillText("FIELD NOTES  /  REMEMBER", 54, 142);
+          ctx.fillStyle = ink;
+          ctx.font = '400 38px "Iowan Old Style", Baskerville, Georgia, serif';
+          drawWrappedCanvasText(ctx, book.chapters[1], 52, 220, 18, 46, 3);
+          drawBullets(book.notes, 58, 380, 4);
+          ctx.globalAlpha = 0.7;
+          ctx.strokeRect(54, 680, 404, 1);
+          ctx.globalAlpha = 1;
+        } else {
+          ctx.font = sans;
+          ctx.letterSpacing = "2px";
+          ctx.fillStyle = book.foil;
+          ctx.fillText("COLOPHON  /  TAKE IT WITH YOU", 54, 164);
+          ctx.fillStyle = ink;
+          ctx.font = '400 34px "Iowan Old Style", Baskerville, Georgia, serif';
+          drawWrappedCanvasText(ctx, book.title, 54, 238, 18, 40, 2);
+          ctx.globalAlpha = 0.76;
+          ctx.font = '400 20px "Iowan Old Style", Baskerville, Georgia, serif';
+          drawWrappedCanvasText(ctx, book.deck, 54, 340, 42, 28, 6);
+          ctx.globalAlpha = 1;
+          ctx.strokeRect(54, 610, 404, 74);
+          ctx.font = sans;
+          ctx.letterSpacing = "1.4px";
+          ctx.fillStyle = book.foil;
+          ctx.fillText(book.id === "mini-course" ? "COURSE EDITION  /  COMING SOON" : `FIELD GUIDE 0${book.roman}  /  NETWORK LAYER`, 70, 652);
         }
 
         ctx.globalAlpha = 0.62;
+        ctx.fillStyle = ink;
         ctx.fillRect(48, logicalHeight - 48, logicalWidth - 96, 1);
         ctx.globalAlpha = 1;
-        const texture = configureCanvasTexture(new THREE.CanvasTexture(canvas), {
-          anisotropy: 16
-        });
+        const texture = configureCanvasTexture(new THREE.CanvasTexture(canvas), { anisotropy: 16 });
         texture.name = `${book.id}-interior-page-${pageIndex + 1}`;
         return texture;
       });
     }
-
     function makeContactShadowTexture() {
       if (sharedContactShadowTexture) return sharedContactShadowTexture;
       const canvas = document.createElement("canvas");
@@ -4387,14 +4316,13 @@
 
     function getSpreadLabels(book) {
       return [
-        "Title page",
-        `${book.chapters[0]} · Plate`,
-        `${book.chapters[1]} · Notes`,
-        `${book.chapters[2]} · System`,
-        "Colophon"
+        "Opening note",
+        `${book.chapters[0]} · Overview`,
+        `${book.chapters[1]} · Field notes`,
+        `${book.chapters[2]} · Diagram`,
+        "Key takeaways"
       ];
     }
-
     function updatePageControls(announce = false) {
       const book = activeBook?.data || BOOKS[selectedIndex];
       const labels = getSpreadLabels(book);
