@@ -503,6 +503,22 @@
       text-transform: uppercase;
     }
 
+    .detail-reading-label {
+      margin: 0 0 7px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .detail-reading-intro {
+      margin: 0 0 13px;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
     .detail-highlights ul {
       display: grid;
       gap: 9px;
@@ -1710,6 +1726,8 @@
       </p>
       <section class="detail-highlights" aria-live="polite" aria-labelledby="detail-highlights-title">
         <h3 id="detail-highlights-title">Inside this volume</h3>
+        <p class="detail-reading-label" id="detail-reading-label">Opening note</p>
+        <p class="detail-reading-intro" id="detail-reading-intro"></p>
         <ul id="detail-highlights-list">
           <li>Logical addressing identifies source and destination.</li>
           <li>Routers choose paths and forward packets hop by hop.</li>
@@ -2039,6 +2057,8 @@
     const detailTitle = document.querySelector("#detail-title");
     const detailDeck = document.querySelector("#detail-deck");
     const detailHighlightsList = document.querySelector("#detail-highlights-list");
+    const detailReadingLabel = document.querySelector("#detail-reading-label");
+    const detailReadingIntro = document.querySelector("#detail-reading-intro");
     const detailBinding = document.querySelector("#detail-binding");
     const detailFormat = document.querySelector("#detail-format");
     const detailTheme = document.querySelector("#detail-theme");
@@ -4363,15 +4383,49 @@
       }
     }
 
-    function populateDetail(book) {
-      detailEyebrow.textContent = `Volume ${book.roman} · ${book.discipline}`;
-      detailTitle.textContent = book.title;
-      detailDeck.textContent = book.deck;
-      detailHighlightsList.replaceChildren(...book.highlights.map((highlight) => {
+    function updateDetailForSpread(book, spread = currentSpread) {
+      const pageContent = [
+        {
+          label: "Opening note",
+          intro: book.deck,
+          bullets: book.highlights
+        },
+        {
+          label: `${book.chapters[0]} · Overview`,
+          intro: book.sections[0].intro,
+          bullets: book.sections[0].bullets
+        },
+        {
+          label: `${book.chapters[1]} · Field notes`,
+          intro: book.sections[1].intro,
+          bullets: book.sections[1].bullets
+        },
+        {
+          label: `${book.chapters[2]} · Diagram`,
+          intro: book.sections[2].intro,
+          bullets: [book.theme, ...book.sections[2].bullets]
+        },
+        {
+          label: "Key takeaways",
+          intro: `The essential points to remember from ${book.title}.`,
+          bullets: book.notes
+        }
+      ][clamp(spread, 0, 4)];
+
+      detailReadingLabel.textContent = pageContent.label;
+      detailReadingIntro.textContent = pageContent.intro;
+      detailHighlightsList.replaceChildren(...pageContent.bullets.map((highlight) => {
         const item = document.createElement("li");
         item.textContent = highlight;
         return item;
       }));
+    }
+
+    function populateDetail(book) {
+      detailEyebrow.textContent = `Volume ${book.roman} · ${book.discipline}`;
+      detailTitle.textContent = book.title;
+      detailDeck.textContent = book.note;
+      updateDetailForSpread(book, currentSpread);
       detailBinding.textContent = book.binding;
       detailFormat.textContent = book.format;
       detailTheme.textContent = book.theme;
@@ -4396,6 +4450,7 @@
 
       previousPageButton.disabled = previousDisabled;
       nextPageButton.disabled = nextDisabled;
+      updateDetailForSpread(book, currentSpread);
       pageLabel.textContent = readingOpen ? labels[currentSpread] : "Closed";
       pageCounter.textContent = readingOpen
         ? `${pad(currentSpread + 1)} / ${pad(SPREAD_COUNT)}`
