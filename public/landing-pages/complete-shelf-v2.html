@@ -1787,10 +1787,10 @@
       </div>
       <div class="fallback__grid" aria-label="Six network layer field guides and one reserved mini-course">
         <article class="fallback-book" style="--book-color:#182a43;--book-foil:#d6a36a;--book-height:390px"><span>Volume I</span><strong>The Network Layer</strong></article>
-        <article class="fallback-book" style="--book-color:#a9472b;--book-foil:#efc16d;--book-height:356px"><span>Volume II</span><strong>IPv4 Addressing</strong></article>
-        <article class="fallback-book" style="--book-color:#17636a;--book-foil:#c6e0dc;--book-height:374px"><span>Volume III</span><strong>IPv6 Addressing</strong></article>
-        <article class="fallback-book" style="--book-color:#24469a;--book-foil:#dbe8f1;--book-height:404px"><span>Volume IV</span><strong>Internetworking</strong></article>
-        <article class="fallback-book" style="--book-color:#8f3036;--book-foil:#efb0aa;--book-height:365px"><span>Volume V</span><strong>The IPv4 Datagram</strong></article>
+        <article class="fallback-book" style="--book-color:#24469a;--book-foil:#dbe8f1;--book-height:404px"><span>Volume II</span><strong>Internetworking</strong></article>
+        <article class="fallback-book" style="--book-color:#a9472b;--book-foil:#efc16d;--book-height:356px"><span>Volume III</span><strong>IPv4 Addressing</strong></article>
+        <article class="fallback-book" style="--book-color:#8f3036;--book-foil:#efb0aa;--book-height:365px"><span>Volume IV</span><strong>The IPv4 Datagram</strong></article>
+        <article class="fallback-book" style="--book-color:#17636a;--book-foil:#c6e0dc;--book-height:374px"><span>Volume V</span><strong>IPv6 Addressing</strong></article>
         <article class="fallback-book" style="--book-color:#315b45;--book-foil:#d4bb83;--book-height:385px"><span>Volume VI</span><strong>The IPv6 Packet</strong></article>
         <article class="fallback-book" style="--book-color:#59616d;--book-foil:#d5dbe0;--book-height:398px"><span>Volume VII</span><strong>Mini-course · Soon</strong></article>
       </div>
@@ -1844,63 +1844,9 @@
         seed: 11
       },
       {
-        id: "ipv4-addressing",
-        title: "IPv4 Addressing",
-        roman: "II",
-        discipline: "32-bit addresses",
-        note: "A four-part address with a network and a host.",
-        deck: "IPv4 uses 32-bit logical addresses, usually written as four decimal octets. Subnets divide an address space into manageable network blocks.",
-        binding: "Burnt-orange cloth · antique-gold foil",
-        format: "Field guide 02 · Addressing",
-        theme: "192.168.1.10 / 24",
-        motif: "Four octets",
-        motifKey: "paths",
-        paletteLabel: "Terracotta · cream · gold",
-        color: "#a9472b",
-        foil: "#efc16d",
-        palette: { paper:"#762f1b", paperDeep:"#572113", paperPale:"#ffe4c5", ink:"#fff0df", inkSoft:"#e3bfa8", wall:"#762f1b", shelf:"#402015", shelfDark:"#1d0d08", light:"#ffd19a", fill:"#dc8c6b" },
-        width: 1.1, height: 1.46, depth: 0.29,
-        chapters: ["Read an IPv4 Address", "Networks & Subnets", "Private & Public Space"],
-        highlights: ["32-bit address written as four decimal octets.", "CIDR prefix separates network bits from host bits.", "Private ranges: 10/8, 172.16/12 and 192.168/16."],
-        sections: [
-          { intro:"An IPv4 address contains 32 bits. It is commonly shown as four 8-bit octets in dotted-decimal form.", bullets:["Example: 192.168.1.10","Each octet ranges from 0 to 255.","The address identifies an interface on an IP network."] },
-          { intro:"A subnet mask or CIDR prefix separates the network portion from the host portion.", bullets:["/24 means the first 24 bits are the network prefix.","A /24 contains 256 total addresses.","Subnetting creates smaller, more manageable networks."] },
-          { intro:"IPv4 addresses can be public or private. Private ranges are used inside local networks and are not globally routed.", bullets:["10.0.0.0/8","172.16.0.0/12","192.168.0.0/16","NAT commonly lets private hosts share a public IPv4 address."] }
-        ],
-        notes:["32 bits = 4 octets.","CIDR writes the prefix as /n.","Network address and broadcast address have special roles in traditional IPv4 subnets."],
-        seed: 22
-      },
-      {
-        id: "ipv6-addressing",
-        title: "IPv6 Addressing",
-        roman: "III",
-        discipline: "128-bit addresses",
-        note: "A much larger address space for a connected world.",
-        deck: "IPv6 expands the address to 128 bits and writes it in hexadecimal groups separated by colons. Its design supports large-scale addressing and simpler network operation.",
-        binding: "Deep-teal cloth · pale-silver foil",
-        format: "Field guide 03 · Addressing",
-        theme: "2001:db8::1",
-        motif: "Hexadecimal groups",
-        motifKey: "caret",
-        paletteLabel: "Deep teal · mist · silver",
-        color: "#17636a",
-        foil: "#c6e0dc",
-        palette: { paper:"#164e55", paperDeep:"#103940", paperPale:"#e2f0e9", ink:"#f2faf4", inkSoft:"#b6d6d0", wall:"#164e55", shelf:"#3b2418", shelfDark:"#1c0f09", light:"#d4f1e9", fill:"#77b8b1" },
-        width: 0.98, height: 1.55, depth: 0.25,
-        chapters: ["The 128-bit Address", "Notation & Shortening", "Address Types"],
-        highlights: ["128-bit address written in eight hexadecimal groups.", "Leading zeroes can be omitted; :: compresses one zero run.", "Unicast, multicast and anycast — no broadcast."],
-        sections: [
-          { intro:"IPv6 uses 128 bits, written as eight groups of hexadecimal digits separated by colons.", bullets:["Example: 2001:0db8:0000:0000:0000:ff00:0042:8329","Each group represents 16 bits.","The larger space supports an enormous number of interfaces."] },
-          { intro:"IPv6 notation can be shortened without changing the address value.", bullets:["Leading zeroes in a group may be omitted.","One consecutive run of zero groups may be replaced by ::","Use :: only once in an address."] },
-          { intro:"IPv6 defines several address types for different delivery patterns.", bullets:["Unicast: one interface.","Multicast: a group of interfaces.","Anycast: the nearest member of a group.","IPv6 does not use broadcast addresses."] }
-        ],
-        notes:["Loopback: ::1","Unspecified: ::","2001:db8::/32 is reserved for documentation examples."],
-        seed: 33
-      },
-      {
         id: "internetworking",
         title: "Internetworking",
-        roman: "IV",
+        roman: "II",
         discipline: "Networks in motion",
         note: "Routers connect independent networks into a larger whole.",
         deck: "Internetworking links distinct IP networks so hosts can communicate across boundaries. Routers examine destination addresses and choose the next hop.",
@@ -1925,9 +1871,36 @@
         seed: 44
       },
       {
+        id: "ipv4-addressing",
+        title: "IPv4 Addressing",
+        roman: "III",
+        discipline: "32-bit addresses",
+        note: "A four-part address with a network and a host.",
+        deck: "IPv4 uses 32-bit logical addresses, usually written as four decimal octets. Subnets divide an address space into manageable network blocks.",
+        binding: "Burnt-orange cloth · antique-gold foil",
+        format: "Field guide 02 · Addressing",
+        theme: "192.168.1.10 / 24",
+        motif: "Four octets",
+        motifKey: "paths",
+        paletteLabel: "Terracotta · cream · gold",
+        color: "#a9472b",
+        foil: "#efc16d",
+        palette: { paper:"#762f1b", paperDeep:"#572113", paperPale:"#ffe4c5", ink:"#fff0df", inkSoft:"#e3bfa8", wall:"#762f1b", shelf:"#402015", shelfDark:"#1d0d08", light:"#ffd19a", fill:"#dc8c6b" },
+        width: 1.1, height: 1.46, depth: 0.29,
+        chapters: ["Read an IPv4 Address", "Networks & Subnets", "Private & Public Space"],
+        highlights: ["32-bit address written as four decimal octets.", "CIDR prefix separates network bits from host bits.", "Private ranges: 10/8, 172.16/12 and 192.168/16."],
+        sections: [
+          { intro:"An IPv4 address contains 32 bits. It is commonly shown as four 8-bit octets in dotted-decimal form.", bullets:["Example: 192.168.1.10","Each octet ranges from 0 to 255.","The address identifies an interface on an IP network."] },
+          { intro:"A subnet mask or CIDR prefix separates the network portion from the host portion.", bullets:["/24 means the first 24 bits are the network prefix.","A /24 contains 256 total addresses.","Subnetting creates smaller, more manageable networks."] },
+          { intro:"IPv4 addresses can be public or private. Private ranges are used inside local networks and are not globally routed.", bullets:["10.0.0.0/8","172.16.0.0/12","192.168.0.0/16","NAT commonly lets private hosts share a public IPv4 address."] }
+        ],
+        notes:["32 bits = 4 octets.","CIDR writes the prefix as /n.","Network address and broadcast address have special roles in traditional IPv4 subnets."],
+        seed: 22
+      },
+      {
         id: "ipv4-datagram",
         title: "The IPv4 Datagram",
-        roman: "V",
+        roman: "IV",
         discipline: "Packet anatomy",
         note: "A header that tells the network how to handle a packet.",
         deck: "An IPv4 datagram contains a header and payload. Header fields support delivery, fragmentation, lifetime control, and identification of the upper-layer protocol.",
@@ -1950,6 +1923,33 @@
         ],
         notes:["Minimum header: 20 bytes.","Maximum header: 60 bytes.","The payload begins after the header and any options."],
         seed: 55
+      },
+      {
+        id: "ipv6-addressing",
+        title: "IPv6 Addressing",
+        roman: "V",
+        discipline: "128-bit addresses",
+        note: "A much larger address space for a connected world.",
+        deck: "IPv6 expands the address to 128 bits and writes it in hexadecimal groups separated by colons. Its design supports large-scale addressing and simpler network operation.",
+        binding: "Deep-teal cloth · pale-silver foil",
+        format: "Field guide 03 · Addressing",
+        theme: "2001:db8::1",
+        motif: "Hexadecimal groups",
+        motifKey: "caret",
+        paletteLabel: "Deep teal · mist · silver",
+        color: "#17636a",
+        foil: "#c6e0dc",
+        palette: { paper:"#164e55", paperDeep:"#103940", paperPale:"#e2f0e9", ink:"#f2faf4", inkSoft:"#b6d6d0", wall:"#164e55", shelf:"#3b2418", shelfDark:"#1c0f09", light:"#d4f1e9", fill:"#77b8b1" },
+        width: 0.98, height: 1.55, depth: 0.25,
+        chapters: ["The 128-bit Address", "Notation & Shortening", "Address Types"],
+        highlights: ["128-bit address written in eight hexadecimal groups.", "Leading zeroes can be omitted; :: compresses one zero run.", "Unicast, multicast and anycast — no broadcast."],
+        sections: [
+          { intro:"IPv6 uses 128 bits, written as eight groups of hexadecimal digits separated by colons.", bullets:["Example: 2001:0db8:0000:0000:0000:ff00:0042:8329","Each group represents 16 bits.","The larger space supports an enormous number of interfaces."] },
+          { intro:"IPv6 notation can be shortened without changing the address value.", bullets:["Leading zeroes in a group may be omitted.","One consecutive run of zero groups may be replaced by ::","Use :: only once in an address."] },
+          { intro:"IPv6 defines several address types for different delivery patterns.", bullets:["Unicast: one interface.","Multicast: a group of interfaces.","Anycast: the nearest member of a group.","IPv6 does not use broadcast addresses."] }
+        ],
+        notes:["Loopback: ::1","Unspecified: ::","2001:db8::/32 is reserved for documentation examples."],
+        seed: 33
       },
       {
         id: "ipv6-packet",
