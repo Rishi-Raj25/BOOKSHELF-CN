@@ -519,6 +519,55 @@
       line-height: 1.5;
     }
 
+    .quiz-join {
+      display: grid;
+      justify-items: start;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--rule);
+    }
+    .quiz-join[hidden] { display: none !important; }
+    .quiz-join__link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 16px;
+      border: 1px solid rgba(43, 34, 27, 0.3);
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform 180ms var(--ease-out), background 180ms ease;
+    }
+    .quiz-join__link:hover { transform: translateY(-2px); background: #fff; }
+    .quiz-join__caption, .quiz-join__url {
+      margin: 0;
+      color: var(--ink-soft);
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .quiz-join__qr-link {
+      display: inline-grid;
+      padding: 8px;
+      border: 1px solid rgba(43, 34, 27, 0.18);
+      background: #fff;
+      border-radius: 4px;
+    }
+    .quiz-join__qr {
+      display: block;
+      width: clamp(112px, 15vw, 164px);
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: contain;
+    }
+
     .detail-highlights ul {
       display: grid;
       gap: 9px;
@@ -1734,6 +1783,14 @@
           <li>IP enables communication across different networks.</li>
         </ul>
       </section>
+      <section class="quiz-join" id="quiz-join" hidden aria-label="Join the mini quiz">
+        <a class="quiz-join__link" id="quiz-join-link" href="https://ahaslides.com/6AB6N" target="_blank" rel="noopener noreferrer">Open quiz on AhaSlides ↗</a>
+        <p class="quiz-join__caption">Or scan to join</p>
+        <a class="quiz-join__qr-link" href="https://ahaslides.com/6AB6N" target="_blank" rel="noopener noreferrer" aria-label="Open the quiz using AhaSlides">
+          <img class="quiz-join__qr" src="/ahaslides-qrcode.png" alt="QR code to join the Network Layer Mini Quiz on AhaSlides">
+        </a>
+        <p class="quiz-join__url">ahaslides.com/6AB6N</p>
+      </section>
       <dl class="meta-list">
         <div>
           <dt>Quick reference</dt>
@@ -1984,7 +2041,7 @@
         roman: "VII",
         discipline: "Knowledge check",
         note: "Ten quick questions to test your networking fundamentals.",
-        deck: "Put the six field guides to the test. Scan the QR code or open the quiz link to join the ten-question networking challenge.",
+        deck: "Put the six field guides to the test. Scan the QR code or open the AhaSlides link to join the ten-question networking challenge.",
         binding: "10 questions · 4 options each",
         format: "Volume VII · Interactive quiz",
         theme: "Learn · test · review",
@@ -1996,13 +2053,15 @@
         palette: { paper:"#343b46", paperDeep:"#252b34", paperPale:"#e8ebed", ink:"#f4f5f4", inkSoft:"#c3c9ce", wall:"#343b46", shelf:"#3a2118", shelfDark:"#1c0e0a", light:"#e0e7ed", fill:"#9daab6" },
         width: 1.02, height: 1.58, depth: 0.26,
         chapters: ["Scan to join", "Ten questions", "Check your score"],
-        highlights: ["Ten questions cover the network layer, routing, IPv4, and IPv6.", "Choose one answer from four options for each question.", "Use the QR code or quiz link to take part."],
+        highlights: ["Ten questions cover the network layer, routing, IPv4, and IPv6.", "Choose one answer from four options for each question.", "Scan the QR code or use the AhaSlides link to participate."],
         sections: [
           { intro:"Ready to test what you have learned? This short quiz brings together the key ideas from all six networking volumes.", bullets:["10 multiple-choice questions","4 options per question","One correct answer per question"] },
-          { intro:"Join the quiz using the QR code or the direct link. The live quiz destination will be connected here.", bullets:["Scan the QR code with your phone","Or open the quiz link","Submit your answers to see how you did"] },
+          { intro:"Join the live quiz using the QR code below or open AhaSlides directly.", bullets:["Scan the QR code with your phone","Open https://ahaslides.com/6AB6N","Submit your answers to see how you did"] },
           { intro:"Take your time, read each question carefully, and see how well you know the network layer.", bullets:["Questions cover routing and forwarding","Review IPv4 and IPv6 addressing","Test your understanding of IP packets"] }
         ],
-        notes:["Quiz destination and QR code will be added once the quiz link is finalised.","The six subject volumes are ready to explore."],
+        notes:["Quiz link: https://ahaslides.com/6AB6N","Scan the QR code to join from another device.","The six subject volumes are ready to explore."],
+        quizUrl: "https://ahaslides.com/6AB6N",
+        qrImage: "/ahaslides-qrcode.png",
         seed: 77
       }
     ];
@@ -2059,6 +2118,8 @@
     const detailHighlightsList = document.querySelector("#detail-highlights-list");
     const detailReadingLabel = document.querySelector("#detail-reading-label");
     const detailReadingIntro = document.querySelector("#detail-reading-intro");
+    const quizJoin = document.querySelector("#quiz-join");
+    const quizJoinLink = document.querySelector("#quiz-join-link");
     const detailBinding = document.querySelector("#detail-binding");
     const detailFormat = document.querySelector("#detail-format");
     const detailTheme = document.querySelector("#detail-theme");
@@ -4422,6 +4483,9 @@
     }
 
     function populateDetail(book) {
+      const isMiniQuiz = book.id === "mini-quiz";
+      quizJoin.hidden = !isMiniQuiz;
+      if (isMiniQuiz) quizJoinLink.href = book.quizUrl;
       detailEyebrow.textContent = `Volume ${book.roman} · ${book.discipline}`;
       detailTitle.textContent = book.title;
       detailDeck.textContent = book.note;
